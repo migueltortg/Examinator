@@ -2,13 +2,13 @@
 
 Proyecto el cual simula una intranet de una autoescuela haciendola totalmente funcional,donde los alumnos podran llevar a cabo
 examenes,los profesores asignarlos y los administradores seran los encargados de administrar el acceso de los distintos usuarios. 
-<br>
+<br><br>
 Requerimientos: <br>
-La Intranet será accesible desde la Web de la Auto Escuela a través de un logueo del usuario. 
+La Intranet será accesible desde la Web de la Auto Escuela a través de un logueo del usuario. <br><br>
 Existirán 3 roles distintos sobre el logueo: <br>
 • Administrador. <br>
 • Profesor. <br>
-• Alumno. \n
+• Alumno. <br>
 <br>
 Funcionalidades del rol de Administrador: <br>
 El administrador podrá realizar todas las funcionalidades del profesor y del alumno. 
@@ -16,7 +16,7 @@ Aunque los usuarios pueden registrarse en el sistema, los administradores tendr�
 el registro y asignarles un rol a los usuarios. <br>
 
 Funcionalidades del rol de Profesor: <br>
-El profesor podrá realizar todas las funcionalidades del alumno. <br>
+El profesor podrá realizar todas las funcionalidades del alumno. <br><br>
 Además, podrá: <br>
 • Crear preguntas tipo test de 3 respuestas posibles, pero sólo 1 respuesta válida 
 (Indicando cuál es la respuesta correcta). <br>
@@ -42,10 +42,12 @@ cada una un “intento” independiente del cual visualizar su corrección indep
 El alumno puede pedir la realización de exámenes de entrenamiento, con lo que se le 
 generarán exámenes de forma automática y se le asignarán automáticamente a su perfil.<br>
 <br>
-Tecnologías:\n
+Tecnologías:<br>
 • JavaScript<br>
 • PHP<br>
 • MySQL<br>
 • HTML<br>
 • CSS<br>
 • Git & GitHub<br>
+
+By Miguel Ángel Torres Ortega
