@@ -8,7 +8,7 @@ La Intranet será accesible desde la Web de la Auto Escuela a través de un logu
 Existirán 3 roles distintos sobre el logueo: <br>
 • Administrador. <br>
 • Profesor. <br>
-• Alumno. <br>
+• Alumno. \n
 <br>
 Funcionalidades del rol de Administrador: <br>
 El administrador podrá realizar todas las funcionalidades del profesor y del alumno. 
@@ -42,7 +42,7 @@ cada una un “intento” independiente del cual visualizar su corrección indep
 El alumno puede pedir la realización de exámenes de entrenamiento, con lo que se le 
 generarán exámenes de forma automática y se le asignarán automáticamente a su perfil.<br>
 <br>
-Tecnologías:<br>
+Tecnologías:\n
 • JavaScript<br>
 • PHP<br>
 • MySQL<br>
