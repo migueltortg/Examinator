@@ -2,7 +2,7 @@
 
 Proyecto el cual simula una intranet de una autoescuela haciendola totalmente funcional,donde los alumnos podran llevar a cabo
 examenes,los profesores asignarlos y los administradores seran los encargados de administrar el acceso de los distintos usuarios. 
-
+<br>
 Requerimientos: 
 La Intranet será accesible desde la Web de la Auto Escuela a través de un logueo del usuario. 
 Existirán 3 roles distintos sobre el logueo: 
