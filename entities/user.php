@@ -1,6 +1,7 @@
 <?php 
     class User {
         // Propiedades
+        private $id;
         private $nombre;
         private $password;
         private $role;
@@ -12,6 +13,10 @@
         }
 
         // Getters y Setters
+        function get_Id(){
+            return $this->id;
+        }
+
         function get_nombre() {
             return $this->nombre;
         }
