@@ -1,7 +1,13 @@
 <?php 
-    include "helper/validator.php";
-    include "entities/Pregunta.php";
+    include "repository/userRep.php";
+    include "database/DB.php";
 
-    $obj=new Pregunta(1,"fwefw4f",'[{"valor": "a", "enunciado": "weffewfwef"},{"valor": "b", "enunciado": "waaaaaewfwef"},{"valor": "c", "enunciado": "weffewennnnnnf"}]',"ffewf","wfreferwferg","frefefewf");
-    $obj->get_RespuestasObj();
+    $conexion=new DB();
+    $conexion->conectar();
+
+    //introducirUsuario($conexion->getConexion(),"Miguel","1234","Admin");
+    //eliminarUsuario($conexion->getConexion(),$user);
+    //$user=new User(null,"Miguel Angel","4321","Admin");
+    //modificarUsuario($conexion->getConexion(),1,$user);
+    //selectUniversal($conexion->getConexion(),"User")[0]->get_Nombre();
 ?>
