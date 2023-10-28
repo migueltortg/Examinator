@@ -1,5 +1,6 @@
 <?php 
     class User {
+        
         // Propiedades
         private $id;
         private $nombre;

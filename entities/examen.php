@@ -1,21 +1,31 @@
 <?php 
-    class Validator {
+    class Examen {
         // Propiedades
-        private $errores=array();
-      
+        private $id;
+        private $fechaCreacion;
+        private $idCreador;
+
+        //Constructor
+        public function __construct($id,$fechaCreacion,$idCreador) {
+            $this->id = $id;
+            $this->fechaCreacion = $fechaCreacion;
+            $this->idCreador = $idCreador;
+        }
+
         // Getters y Setters
-        function get_errores() {
-          return $this->errores;
+        public function get_Id(){
+            return $this->id;
+        }
+
+        public function get_FechaCreacion(){
+            return $this->fechaCreacion;
+        }
+
+        public function get_IdCreador(){
+            return $this->idCreador;
         }
 
         //Funciones
-        function rango($clave,$valor,$min,$max){
-            if($valor>=$min && $valor<=$max){
-                return true;
-            }else{
-                $this->errores[$clave]=$clave . " fuera de rango.";
-                return false;
-            }
-        }
+        
     }
 ?>
