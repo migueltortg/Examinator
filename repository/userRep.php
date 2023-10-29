@@ -1,6 +1,4 @@
 <?php 
-    include "databaseRep.php";
-
     function crearUsuario($id,$nombre,$password,$role){
         $usuario=new User($id,$nombre,$password,$role);
         return $usuario;

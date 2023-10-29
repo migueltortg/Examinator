@@ -1,6 +1,4 @@
 <?php 
-    include "entities/User.php";
-
     function añadirUsuario($conexion,$usuario){
         $preparedConexion=$conexion->prepare("INSERT INTO User(Nombre,Password,Role)
         VALUES (:nombre,:password,:role)");

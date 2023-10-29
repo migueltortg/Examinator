@@ -1,20 +1,17 @@
 <?php 
-    include "repository/preguntaRep.php";
-    
     class Pregunta{
         // Propiedades
         private $id;
         private $enunciado;
-        private $respuestas;
+        private $respuestas=array();
         private $categoria;
         private $dificultad;
         private $recurso;
 
         //Constructor
-        public function __construct($id,$enunciado,$respuestas,$categoria,$dificultad,$recurso) {
+        public function __construct($id,$enunciado,$categoria,$dificultad,$recurso) {
             $this->id = $id;
             $this->enunciado = $enunciado;
-            $this->respuestas = $respuestas;
             $this->categoria = $categoria;
             $this->dificultad = $dificultad;
             $this->recurso = $recurso;
@@ -30,11 +27,11 @@
         }
 
         public function get_RespuestasJSON() { 
-            return $this->respuestas; 
+            return json_encode($this->respuestas); 
         }
 
         public function get_RespuestasObj(){
-            return arrayObjetosRespuestas($this);
+            return $this->respuestas;
         }
 
         public function get_Categoria() { 
@@ -59,6 +56,14 @@
 
         public function set_recurso($recurso) {
             $this->recurso = $recurso;
+        }
+
+        public function set_Respuestas($respuestas) {
+            array_push($this->respuestas,$respuestas);
+        }
+
+        public function eliminarRespuesta($respuesta){
+            unset($this->respuestas[$respuesta->get_Id()-1]);
         }
     }
 ?>
