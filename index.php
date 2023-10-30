@@ -1,5 +1,5 @@
 <?php 
-    include "helper/include.php";
+    require_once 'helper/autocargador.php';    
 
     $conexion=new DB();
     $conexion->conectar();
@@ -21,10 +21,12 @@
     // //modificarRespuesta($pregunta,$respuesta2,$respuesta1);
     // echo $pregunta->get_RespuestasJSON();
 
-    var_dump(selectUniversal($conexion->getConexion(),"Pregunta")[1]);
+    var_dump(databaseRep::selectUniversal($conexion->getConexion(),"Pregunta")[1]);
 
     // introducirPregunta($conexion->getConexion(),"2","Es posiblee..",'
     // [{"IdRespuesta":"1","ValorRespuesta":"A","Enunciado":"No puedes si..."},
     // {"IdRespuesta":"2","ValorRespuesta":"B","Enunciado":"Nunca"}
     // ,{"IdRespuesta":"3","ValorRespuesta":"C","Enunciado":"Siempre"}]',"Señales","Dificil",null) ;
+
+    
 ?>
