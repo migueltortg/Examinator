@@ -13,7 +13,7 @@
     
         public static function introducirPregunta($conexion,$id,$enunciado,$respuestas,$categoria,$dificultad,$recurso){
             $pregunta=preguntaRep::crearPregunta($id,$enunciado,$respuestas,$categoria,$dificultad,$recurso);
-            añadirPregunta($conexion,$pregunta);
+            databaseRep::añadirPregunta($conexion,$pregunta);
         }
     
         public static function arrayPregunta($array){

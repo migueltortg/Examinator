@@ -21,12 +21,17 @@
     // //modificarRespuesta($pregunta,$respuesta2,$respuesta1);
     // echo $pregunta->get_RespuestasJSON();
 
-    var_dump(databaseRep::selectUniversal($conexion->getConexion(),"Pregunta")[1]);
+    //var_dump(databaseRep::selectUniversal($conexion->getConexion(),"Pregunta"));
 
     // introducirPregunta($conexion->getConexion(),"2","Es posiblee..",'
     // [{"IdRespuesta":"1","ValorRespuesta":"A","Enunciado":"No puedes si..."},
     // {"IdRespuesta":"2","ValorRespuesta":"B","Enunciado":"Nunca"}
     // ,{"IdRespuesta":"3","ValorRespuesta":"C","Enunciado":"Siempre"}]',"Señales","Dificil",null) ;
 
-    
+    //examenRep::introducirExamen($conexion->getConexion(),1);
+    //$examen=new Examen(null,null,2);
+    //examenRep::eliminarExamen($conexion->getConexion(),$examen);
+    //examenRep::modificarExamen($conexion->getConexion(),2,$examen);
+    var_dump(databaseRep::selectUniversal($conexion->getConexion(),"Examen"));
+
 ?>
