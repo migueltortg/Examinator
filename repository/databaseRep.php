@@ -14,6 +14,28 @@
         $preparedConexion->execute();
     }
 
+    function añadirPregunta($conexion,$pregunta){
+        $preparedConexion=$conexion->prepare("INSERT INTO PREGUNTA (ENUNCIADO,RESPUESTAS,CATEGORIA,DIFICULTAD,TIPO_RECURSO,RECURSO)
+        VALUES (:enunciado,:respuestas,:categoria,:dificultad,:tipo_recurso,:recurso)");
+
+        $enunciado=$pregunta->get_Enunciado();
+        $respuestas=$pregunta->get_RespuestasJSON();
+        $categoria=$pregunta->get_Categoria();
+        $dificultad=$pregunta->get_Dificultad();
+        $tipo_recurso=null;//CAMBIAR
+        $recurso=null;//CAMBIAR
+
+
+        $preparedConexion->bindParam(':enunciado',$enunciado);
+        $preparedConexion->bindParam(':respuestas',$respuestas);
+        $preparedConexion->bindParam(':categoria',$categoria);
+        $preparedConexion->bindParam(':dificultad',$dificultad);
+        $preparedConexion->bindParam(':tipo_recurso',$tipo_recurso);
+        $preparedConexion->bindParam(':recurso',$recurso);
+
+        $preparedConexion->execute();
+    }
+
     function borrarUsuarioDB($conexion,$usuario){
         $preparedConexion=$conexion->prepare('DELETE FROM USER WHERE IdUser=:id AND Nombre=:nombre AND Password=:password AND Role=:role ;');
 
@@ -55,6 +77,9 @@
         switch ($tabla) {
             case "User":
                 return arrayUser($objetos);
+                break;
+            case "Pregunta":
+                return arrayPregunta($objetos);
                 break;
         }
     }

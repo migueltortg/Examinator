@@ -1,0 +1,105 @@
+[
+    {
+        "numero":1,
+        "categoria":"motor",
+        "descripcion":"¿Qué es el par motor?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    },{
+        "numero":2,
+        "categoria":"Ciculacion",
+        "descripcion":"¿Como se entra a una rotonda?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    },{
+        "numero":3,
+        "categoria":"Motor",
+        "descripcion":"Cuantos caballos?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    },
+
+    {
+        "numero":4,
+        "categoria":"motor",
+        "descripcion":"¿Qué es el par motor?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    },{
+        "numero":5,
+        "categoria":"Ciculacion",
+        "descripcion":"¿Como se entra a una rotonda?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    },{
+        "numero":6,
+        "categoria":"Motor",
+        "descripcion":"Cuantos caballos?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    },
+
+    {
+        "numero":7,
+        "categoria":"motor",
+        "descripcion":"¿Qué es el par motor?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    },{
+        "numero":8,
+        "categoria":"Ciculacion",
+        "descripcion":"¿Como se entra a una rotonda?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    },{
+        "numero":9,
+        "categoria":"Motor",
+        "descripcion":"Cuantos caballos?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    },
+
+    {
+        "numero":10,
+        "categoria":"motor",
+        "descripcion":"¿Qué es el par motor?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    },{
+        "numero":12,
+        "categoria":"Ciculacion",
+        "descripcion":"¿Como se entra a una rotonda?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    },{
+        "numero":13,
+        "categoria":"Motor",
+        "descripcion":"Cuantos caballos?",
+        "respuesta1": "nose",
+        "respuesta2": "si",
+        "respuesta3": "no",
+        "valida": 2
+    }
+]

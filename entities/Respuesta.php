@@ -1,28 +1,28 @@
 <?php 
     class Respuesta implements JsonSerializable{
         //Propiedades
-        private $id;
-        private $valor;
-        private $enunciado;
+        private $IdRespuesta;
+        private $ValorRespuesta;
+        private $Enunciado;
 
         //Constructor
-        public function __construct($id,$valor,$enunciado){
-            $this->id = $id;
-            $this->valor = $valor;
-            $this->enunciado = $enunciado;
+        public function __construct($IdRespuesta,$ValorRespuesta,$Enunciado){
+            $this->IdRespuesta = $IdRespuesta;
+            $this->ValorRespuesta = $ValorRespuesta;
+            $this->Enunciado = $Enunciado;
         }
 
         //Getters
         public function get_valor(){
-            return $this->valor;
+            return $this->ValorRespuesta;
         }
 
         public function get_enunciado(){
-            return $this->enunciado;
+            return $this->Enunciado;
         }
 
         public function get_Id(){
-            return $this->id;
+            return $this->IdRespuesta;
         }
 
         public function jsonSerialize(){

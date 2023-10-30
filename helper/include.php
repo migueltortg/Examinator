@@ -12,4 +12,6 @@
     include "repository/examenRep.php";
     include "repository/userRep.php";
     include "repository/respuestaRep.php";
+    include "repository/preguntaRep.php";
+
 ?>
