@@ -77,6 +77,30 @@
             
             $preparedConexion->execute();
         }
+
+        public static function borrarPreguntaDB($conexion,$pregunta){
+            $preparedConexion=$conexion->prepare('DELETE FROM PREGUNTA WHERE IdPregunta=:idPregunta AND Enunciado=:enunciado 
+            AND Respuestas=:respuestas AND Categoria=:categoria AND Dificultad=:dificultad AND Tipo_Recurso=:tipo_recurso AND
+            Recurso=:recurso ;');
+    
+            $idPregunta= $pregunta->get_Id();
+            $enunciado=$pregunta->get_Enunciado();
+            $respuestas=$pregunta->get_RespuestasJSON();
+            $categoria=$pregunta->get_Categoria();
+            $dificultad=$pregunta->get_Dificultad();
+            $tipo_recurso=null;//CAMBIAR
+            $recurso=null;//CAMBIAR
+
+            $preparedConexion->bindParam(':idPregunta',$idPregunta);
+            $preparedConexion->bindParam(':enunciado',$enunciado);
+            $preparedConexion->bindParam(':respuestas',$respuestas);
+            $preparedConexion->bindParam(':categoria',$categoria);
+            $preparedConexion->bindParam(':dificultad',$dificultad);
+            $preparedConexion->bindParam(':tipo_recurso',$tipo_recurso);
+            $preparedConexion->bindParam(':recurso',$recurso);
+            
+            $preparedConexion->execute();
+        }
     
         public static function modificarUsuarioDB($conexion,$id,$usuario){
             $preparedConexion=$conexion->prepare('UPDATE USER SET Nombre=:nombre,Password=:password,Role=:role WHERE IdUser=:id;');

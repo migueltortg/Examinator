@@ -16,6 +16,10 @@
             databaseRep::añadirPregunta($conexion,$pregunta);
         }
     
+        public static function eliminarPregunta($conexion,$pregunta){
+            databaseRep::borrarPreguntaDB($conexion,$pregunta);
+        }
+
         public static function arrayPregunta($array){
             $arrayPregunta=array();
             foreach ($array as $objeto) {
