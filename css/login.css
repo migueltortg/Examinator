@@ -1,0 +1,68 @@
+*{
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(img/fondoBienvenida.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#container{
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 2%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form h1{
+    color: #3d3d3d;
+    font-size: 4em;
+    padding-bottom: 10%;
+    text-decoration-line: underline;
+}
+
+form #inputSubmit{
+    background-color: green;
+    font-size: 2em;
+    padding: 2%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+    border: 0px;
+}
+
+form div{
+    display: grid;
+    grid-template-columns: 25% 50%;
+    margin-bottom: 10%;
+}
+
+form div h3{
+    color: #3d3d3d;
+}
+
+form div input{
+    justify-content: center;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+form a{
+    margin-top: 5%;
+    color: blue;
+}
