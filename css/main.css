@@ -34,3 +34,8 @@ article{
     text-align: justify;
     margin-right: 3%;
 }
+
+.container .exam-container h1{
+    background-color: black;
+    color: white;
+}

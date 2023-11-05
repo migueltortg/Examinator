@@ -8,7 +8,7 @@
             require_once 'adminHeader.php';
         }
         if($_GET['rol']== 'user'){
-            require_once 'userHeader.php';
+            require_once 'userMain.php';
         }
         if($_GET['rol']== 'teacher'){
             require_once 'teacherHeader.php';

@@ -6,18 +6,7 @@ if (isset($_GET['menu'])) {
         require_once "header/header.php";
 
         //Mostramos el main correspondiente.
-        if($_GET['rol'] == "noLogged"){
-            require_once "main/noLogged.php";
-        }
-        if($_GET["rol"] == "admin"){
-            require_once "main/admin.php";
-        }
-        if($_GET["rol"] == "teacher"){
-            require_once "main/teacher.php";
-        }
-        if($_GET["rol"] == "user"){
-            require_once "main/userMain.php";
-        }
+        require_once "main/main.php";
     }
     if ($_GET['menu'] == "login") {
         require_once 'vistas/login.php';
