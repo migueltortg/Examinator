@@ -25,5 +25,22 @@
             }
             return $arrayExamen;
         }
+
+        public static function cargarExamenes($conexion){
+            $examenes=databaseRep::selectUniversal($conexion,"Examen");
+            foreach ($examenes as $examen) {
+                echo "
+                <div class='exam'>
+                    <div class='exam-title'>
+                        <h2>".$examen->get_Id()."</h2>
+                        <h4>".$examen->get_FechaCreacion()."</h4>
+                    </div>
+                    <div class='exam-btns'>
+                        <input type='button' value='Hacerlo' id=".$examen->get_Id().">
+                    </div>
+                </div>
+                ";
+            }
+        }
     }
 ?>

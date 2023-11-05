@@ -8,13 +8,14 @@ article{
 }
 
 .container .title{
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid white;
 }
 
 .container .title h3{
     padding: 1%;
     font-size: 2em;
     text-decoration: underline;
+    color: white;
 }
 
 .container .content{
@@ -35,7 +36,36 @@ article{
     margin-right: 3%;
 }
 
-.container .exam-container h1{
-    background-color: black;
+.container .exam-container{
+    margin: 2%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.container .exam-container .exam{
     color: white;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    padding: 3%;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-row: auto auto;
+    background-color: #58AFB8;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.container .exam-container .exam .exam-btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .exam-container .exam .exam-btns input{
+    color: green;
+    padding: 10%;
+    background-color: white;
+    border: 0px;
+    border-radius: 30px;
 }
