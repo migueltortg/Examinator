@@ -9,6 +9,11 @@
     }
 ?>
 
+<head>
+    <title>Inicio de Sesion</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/login.css">
+</head>
 <body>
     <div id="container">
         <form action="" method="post">        
