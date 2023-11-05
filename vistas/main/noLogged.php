@@ -1,5 +1,4 @@
-<main>
-    <article class="container">
+<article class="container">
         <div class="title">
             <h3>Sobre Nosotros</h3>
         </div>
@@ -49,5 +48,4 @@
                 <p>Integer turpis eros, finibus nec posuere vel, tincidunt et nulla. Phasellus vel vehicula lacus. Curabitur sollicitudin orci metus, quis condimentum erat rhoncus et. Morbi gravida nisi et leo suscipit dapibus. Donec finibus arcu non tellus tincidunt convallis. Fusce tellus nisl, rutrum sit amet rutrum sit amet, condimentum nec tellus. Phasellus sagittis lacus id sem tempor, aliquet fermentum nisl cursus. Suspendisse ex ipsum, bibendum et quam nec, elementum blandit odio. Nulla suscipit arcu id purus commodo ornare. Curabitur at erat augue. Curabitur nec cursus tortor, quis sagittis arcu. Mauris sit amet tincidunt lorem. Vestibulum in orci a massa laoreet lobortis eu at tortor.</p>
             </div>
         </div>
-    </article>
-</main>
+</article>

@@ -16,7 +16,7 @@ if (isset($_GET['menu'])) {
             require_once "main/teacher.php";
         }
         if($_GET["rol"] == "user"){
-            require_once "main/user.php";
+            require_once "main/userMain.php";
         }
     }
     if ($_GET['menu'] == "login") {

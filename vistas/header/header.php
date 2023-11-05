@@ -18,10 +18,5 @@
                 require_once 'teacherHeader.php';
             }
         ?>
-        <div id="user-container">
-            <?php 
-                echo "<p>".$_GET["name"]."</p>";
-            ?>
-        </div>
     </div>
 </header>

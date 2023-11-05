@@ -5,3 +5,8 @@
         <li><a href="https://www.google.es">Intentos</a></li>
     </ul>
 </div>
+<div id="user-container">
+    <?php 
+        echo "<p>".$_GET["name"]."</p>";
+    ?>
+</div>
