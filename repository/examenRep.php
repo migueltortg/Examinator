@@ -27,7 +27,7 @@
         }
 
         public static function cargarExamenes($conexion){
-            $examenes=databaseRep::selectUniversal($conexion,"Examen");
+            $examenes=databaseRep::selectExamenAsignado($conexion,$_GET['id']);
             foreach ($examenes as $examen) {
                 echo "
                 <div class='exam'>

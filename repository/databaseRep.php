@@ -148,6 +148,24 @@
             }
         }
 
+        public static function selectExamenAsignado($conexion,$IdAlumno){
+            $resultado = $conexion->query('SELECT * FROM Alumno_Examen WHERE IdAlumno='.$IdAlumno.';', MYSQLI_USE_RESULT);
+            $objetos=array();
+            
+            while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
+                array_push($objetos,databaseRep::devolverExamenId($conexion,$registro->IdExamen));
+            } 
+
+            return $objetos;
+        }
+
+        public static function devolverExamenId($conexion,$Id){
+            $resultado = $conexion->query('SELECT * FROM Examen WHERE IdExamen='.$Id.';', MYSQLI_USE_RESULT);
+            $objetos=array();
+            while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
+                return examenRep::crearExamen($registro->IdExamen,$registro->fecha_hora,$registro->IdCreador);
+            } 
+        }
         
     }
     
