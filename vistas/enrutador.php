@@ -2,6 +2,7 @@
 if (isset($_GET['menu'])) {
     if ($_GET['menu'] == "inicio") {
         require_once 'vistas/principal.php';
+        
         //Mostramos el header.
         require_once "header/header.php";
 

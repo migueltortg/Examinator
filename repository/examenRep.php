@@ -27,7 +27,7 @@
         }
 
         public static function cargarExamenes($conexion){
-            $examenes=databaseRep::selectExamenAsignado($conexion,$_GET['id']);
+            $examenes=databaseRep::selectExamenAsignado($conexion,loginRep::pedirValorSession("user")->get_Id());
             foreach ($examenes as $examen) {
                 echo "
                 <div class='exam'>

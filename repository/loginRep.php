@@ -1,30 +1,34 @@
 <?php
-    function logIn($nombre){
-        inicioSesion();
-        guardaSesion("user",$nombre);
-    }
-
-    function inicioSesion(){
-        session_start();
-    }
-
-    function guardaSesion($clave,$valor){
-        $_SESSION[$clave]=$valor;
-    }
-
-    function pedirValorSession($clave){
-        if(empty($clave)){
-            return "";
-        }else{
-            return $_SESSION[$clave];
+    class loginRep{
+        public static function logIn($user){
+            loginRep::inicioSesion();
+            loginRep::guardaSesion("user",$user);//Objeto tipo user.
         }
-    }
 
-    function estaLogueado(){
-        return isset($_SESSION['user']);
-    }
+        public static function inicioSesion(){
+            if(!loginRep::estaLogueado()){
+                session_start();
+            }
+        }
 
-    function destruirSession(){
-        session_destroy();
+        public static function guardaSesion($clave,$valor){
+            $_SESSION[$clave]=$valor;
+        }
+
+        public static function pedirValorSession($clave){
+            if(empty($clave)){
+                return "";
+            }else{
+                return $_SESSION[$clave];
+            }
+        }
+
+        public static function estaLogueado(){
+            return isset($_SESSION['user']);
+        }
+
+        public static function destruirSession(){
+            session_destroy();
+        }
     }
 ?>

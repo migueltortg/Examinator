@@ -1,10 +1,13 @@
 <?php 
+    $conexion=new DB();
+    $conexion->conectar();
     if(isset($_POST["iniciarSesion"])){
         //Comprobar credenciales
-        if(true==false){
-            //CREAR CONEXION Y PASAR
-        }else{
-            require_once "vistas/login.php";
+        $user=databaseRep::devolverUser($conexion->getConexion(),$_POST['nombre'],$_POST['contraseña']);
+        if($user!=null){
+            loginRep::logIn($user);
+            //require_once 'vistas/enrutador.php';
+            header("Location: http://localhost/Examinator/index.php?menu=inicio");
         }
     }
 ?>

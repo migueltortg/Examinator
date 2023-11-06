@@ -161,9 +161,19 @@
 
         public static function devolverExamenId($conexion,$Id){
             $resultado = $conexion->query('SELECT * FROM Examen WHERE IdExamen='.$Id.';', MYSQLI_USE_RESULT);
-            $objetos=array();
             while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
                 return examenRep::crearExamen($registro->IdExamen,$registro->fecha_hora,$registro->IdCreador);
+            } 
+        }
+
+        public static function devolverUser($conexion,$nombre,$password){
+            $sql = "SELECT * FROM USER WHERE Password=:password AND Nombre=:nombre;";
+            $statement=$conexion->prepare($sql);
+            $statement->bindParam(":nombre",$nombre);
+            $statement->bindParam(":password",$password);
+            $statement->execute();
+            while ($registro = $statement->fetch(PDO::FETCH_OBJ)) {
+                return userRep::crearUsuario($registro->IdUser,$registro->Nombre,$registro->Password,$registro->Role);
             } 
         }
         

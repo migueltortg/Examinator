@@ -4,18 +4,22 @@
             <img src="css/img/icono.png" alt="" width="40px" height="40px">
         </div>
         <?php
+            loginRep::inicioSesion();
             //COMPROBAR SI EXISTE SESSION
-            if($_GET["rol"]=="noLogged"){
+            if(!loginRep::estaLogueado()){
                 require_once 'noLogged.php';
             }
-            if($_GET['rol']== 'admin'){
-                require_once 'adminHeader.php';
-            }
-            if($_GET['rol']== 'user'){
-                require_once 'userHeader.php';
-            }
-            if($_GET['rol']== 'teacher'){
-                require_once 'teacherHeader.php';
+            
+            switch (strtoupper(loginRep::pedirValorSession("user")->get_role())) {
+                case "ADMIN":
+                    require_once 'adminHeader.php';
+                    break;
+                case "USER":
+                    require_once 'userHeader.php';
+                    break;
+                case "TEACHER":
+                    require_once 'teacherHeader.php';
+                    break;
             }
         ?>
     </div>

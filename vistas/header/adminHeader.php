@@ -6,6 +6,6 @@
 </div>
 <div id="user-container">
     <?php 
-        echo "<p>".$_GET["name"]."</p>";
+        echo "<p>".loginRep::pedirValorSession("user")->get_nombre()."</p>";
     ?>
 </div>

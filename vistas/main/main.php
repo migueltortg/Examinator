@@ -1,17 +1,21 @@
 <main>
     <?php
+        loginRep::inicioSesion();
         //COMPROBAR SI EXISTE SESSION
-        if($_GET["rol"]=="noLogged"){
+        if(!loginRep::estaLogueado()){
             require_once 'noLogged.php';
         }
-        if($_GET['rol']== 'admin'){
-            require_once 'adminHeader.php';
-        }
-        if($_GET['rol']== 'user'){
-            require_once 'userMain.php';
-        }
-        if($_GET['rol']== 'teacher'){
-            require_once 'teacherHeader.php';
+
+        switch (strtoupper(loginRep::pedirValorSession("user")->get_role())) {
+            case "ADMIN":
+                require_once 'adminMain.php';
+                break;
+            case "USER":
+                require_once 'userMain.php';
+                break;
+            case "TEACHER":
+                require_once 'teacherMain.php';
+                break;
         }
     ?>
 </main>
