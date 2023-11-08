@@ -6,7 +6,7 @@
         </ul>
 </div>
 <div id="user-container">
-        <a href="http://localhost/Examinator/vistas/login.php">Inicia Sesión</a>
+        <a href="?menu=login">Inicia Sesión</a>
         <a> o </a>
         <a href="">Registrate</a>
 </div>

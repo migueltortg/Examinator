@@ -8,5 +8,6 @@
 <div id="user-container">
     <?php 
         echo "<p>".loginRep::pedirValorSession("user")->get_nombre()."</p>";
+        include "cerrarSesion.php";
     ?>
 </div>

@@ -6,7 +6,6 @@
         $user=databaseRep::devolverUser($conexion->getConexion(),$_POST['nombre'],$_POST['contraseña']);
         if($user!=null){
             loginRep::logIn($user);
-            //require_once 'vistas/enrutador.php';
             header("Location: http://localhost/Examinator/index.php?menu=inicio");
         }
     }

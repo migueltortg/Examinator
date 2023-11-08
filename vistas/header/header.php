@@ -8,9 +8,8 @@
             //COMPROBAR SI EXISTE SESSION
             if(!loginRep::estaLogueado()){
                 require_once 'noLogged.php';
-            }
-            
-            switch (strtoupper(loginRep::pedirValorSession("user")->get_role())) {
+            }else{
+                switch (strtoupper(loginRep::pedirValorSession("user")->get_role())) {
                 case "ADMIN":
                     require_once 'adminHeader.php';
                     break;
@@ -20,6 +19,7 @@
                 case "TEACHER":
                     require_once 'teacherHeader.php';
                     break;
+                }
             }
         ?>
     </div>
