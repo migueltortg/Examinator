@@ -25,5 +25,42 @@
             }
             return $arrayUser;
         }
+
+        public static function cargarUsuarios($conexion){
+            $usuarios = databaseRep::selectUniversal($conexion, "User");
+        
+            foreach ($usuarios as $user) {
+                $admin = "";
+                $teacher = "";
+                $usuario = "";
+        
+                switch (strtoupper($user->get_role())) {
+                    case "ADMIN":
+                        $admin = "selected";
+                        break;
+                    case "TEACHER":
+                        $teacher = "selected";
+                        break;
+                    case "USER":
+                        $usuario = "selected";
+                        break;
+                }
+        
+                echo "
+                <div class='user'>
+                    <div class='user-title'>
+                        <h2>" . $user->get_Nombre() . "</h2>
+                    </div>
+                    <div>
+                        <select class='dificultad'>
+                            <option " . $usuario . " value='User'>User</option>
+                            <option " . $teacher . " value='Profesor'>Profesor</option>
+                            <option " . $admin . " value='Administrador'>Administrador</option>
+                        </select>
+                    </div>
+                    <button id='usuarioEditar' onclick=''>Cambiar</button>
+                </div>";
+            }
+        }
     }
 ?>
