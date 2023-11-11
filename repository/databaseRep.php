@@ -14,6 +14,19 @@
     
             $preparedConexion->execute();
         }
+
+        public static function añadirUsuarioPendiente($conexion,$usuario){
+            $preparedConexion=$conexion->prepare("INSERT INTO User_pendiente(Nombre,Password)
+            VALUES (:nombre,:password)");
+    
+            $nombre=$usuario->get_nombre();
+            $password=$usuario->get_password();
+    
+            $preparedConexion->bindParam(':nombre',$nombre);
+            $preparedConexion->bindParam(':password',$password);
+    
+            $preparedConexion->execute();
+        }
     
         public static function añadirPregunta($conexion,$pregunta){
             $preparedConexion=$conexion->prepare("INSERT INTO PREGUNTA (ENUNCIADO,RESPUESTAS,CATEGORIA,DIFICULTAD,TIPO_RECURSO,RECURSO)

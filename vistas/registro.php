@@ -1,3 +1,15 @@
+<?php 
+    $conexion=new DB();
+    $conexion->conectar();
+    if(isset($_POST["registro"])){
+        //INSERT A TABLA
+        if($_POST['contraseña']==$_POST['RepeatContraseña'] && $_POST['nombre']!="" || $_POST['contraseña']!=""){
+            registroRep::userPendiente($conexion->getConexion(),$_POST['nombre'],$_POST['contraseña'],"");
+            header("Location: http://localhost/Examinator/index.php?menu=inicio");
+        }
+    }
+?>
+
 <head>
     <title>Registro</title>
     <meta charset="UTF-8">
@@ -20,7 +32,7 @@
                 <input type="text" name="RepeatContraseña" id="inputRepeatContraseña">
             </div>
             <input type="submit" value="Acceder" name="registro" id="registro">
-            <a href="https://www.google.es">LogIn</a>
+            <a href="?menu=login">LogIn</a>
         </form>
     </div>
 </body>

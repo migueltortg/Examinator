@@ -8,5 +8,5 @@
 <div id="user-container">
         <a href="?menu=login">Inicia Sesión</a>
         <a> o </a>
-        <a href="">Registrate</a>
+        <a href="?menu=registro">Registrate</a>
 </div>
