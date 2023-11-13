@@ -48,7 +48,30 @@ article{
     grid-template-columns: 33% 33% 33%;
 }
 
-.container .user-container .user{
+.container .user-container .user-pendiente{
+    display: grid;
+    grid-template-columns: 20% 40% 40%;
+    align-items: center;
+}
+
+.container .user-container .user-pendiente div{
+    margin-right: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.container .user-container .user-pendiente button{
+    color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    padding: 4%;
+    font-size: 1em;
+    margin-right: 2%;
+    margin-left: 2%;
+    background-color: #269199;
+}
+
+.container .user-container .user,.user-pendiente{
     background-color: #58AFB8;
     margin-bottom: 1%;
     margin-left: 1%;

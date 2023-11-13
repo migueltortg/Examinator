@@ -16,7 +16,7 @@
         <div class="title">
             <h3>Usuarios Pendientes</h3>
         </div>
-        <div class="userPendiente-container">
+        <div class="user-container">
             <?php
                 $conexion=new DB();
                 $conexion->conectar();

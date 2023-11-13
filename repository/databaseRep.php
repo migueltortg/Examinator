@@ -145,6 +145,9 @@
                 case "Examen":
                     return examenRep::arrayExamen($objetos);
                     break;
+                case "User_pendiente":
+                    return userRep::arrayUserPendiente($objetos);
+                    break;
             }
         }
 
