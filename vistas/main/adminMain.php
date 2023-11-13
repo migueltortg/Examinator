@@ -24,3 +24,4 @@
             ?>
         </div>
 </article>
+<script src="api/userPendiente.js"></script>
