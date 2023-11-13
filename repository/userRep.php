@@ -80,20 +80,20 @@
                 
             //Echo para crear los distintos divs
             echo "
-            <div class='user-pendiente'>
+            <div class='user-pendiente' id=".$user->get_Id().">
                     <div class='user-title'>
                         <h2>".$user->get_Nombre()."</h2>
                     </div>
                     <div class='rol-container'>
                         <select class='rol'>                                
-                            <option selected value='User'>Usuario</option>
-                            <option value='Profesor'>Profesor</option>
-                            <option value='Administrador'>Administrador</option>
+                            <option selected value='USER'>Usuario</option>
+                            <option value='TEACHER'>Profesor</option>
+                            <option value='ADMIN'>Administrador</option>
                         </select>
                     </div>
                     <div class='btnsRechazarAceptar'>
-                        <button>Aceptar</button>
-                        <button>Rechazar</button>
+                        <button class='btnAceptar' onclick='aceptar(this)'>Aceptar</button>
+                        <button class='btnRechazar' onclick='rechazar(this)'>Rechazar</button>
                     </div>
                 </div>";
             }
