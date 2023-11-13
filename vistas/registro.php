@@ -3,7 +3,7 @@
     $conexion->conectar();
     if(isset($_POST["registro"])){
         //INSERT A TABLA
-        if($_POST['contraseña']==$_POST['RepeatContraseña'] && $_POST['nombre']!="" || $_POST['contraseña']!=""){
+        if($_POST['contraseña']==$_POST['RepeatContraseña'] && $_POST['nombre']!="" && $_POST['contraseña']!=""){
             registroRep::userPendiente($conexion->getConexion(),$_POST['nombre'],$_POST['contraseña'],"");
             header("Location: http://localhost/Examinator/index.php?menu=inicio");
         }
