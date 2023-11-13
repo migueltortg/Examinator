@@ -25,5 +25,78 @@
             }
             return $arrayUser;
         }
+
+        public static function arrayUserPendiente($array){
+            $arrayUser=array();
+            foreach ($array as $objeto) {
+                array_push($arrayUser,userRep::crearUsuario($objeto->IdUser,$objeto->Nombre,$objeto->Password,""));
+            }
+            return $arrayUser;
+        }
+
+        public static function cargarUsuarios($conexion){
+            $usuarios = databaseRep::selectUniversal($conexion, "User");//Esto develve una array de Users
+        
+            foreach ($usuarios as $user) {//Esto es para elegir en que opcion empezara el select
+                $admin = "";
+                $teacher = "";
+                $usuario = "";
+        
+                switch (strtoupper($user->get_role())) {
+                    case "ADMIN":
+                        $admin = "selected";
+                        break;
+                    case "TEACHER":
+                        $teacher = "selected";
+                        break;
+                    case "USER":
+                        $usuario = "selected";
+                        break;
+                }
+                //Echo para crear los distintos divs
+                echo "
+                <div class='user'>
+                    <form action='' method='get'>
+                        <div class='user-title'>
+                            <h2>".$user->get_Nombre()."</h2>
+                        </div>
+                        <div>
+                            <select class='dificultad'>
+                                <option " . $usuario . " value='User'>Usuario</option>
+                                <option " . $teacher . " value='Profesor'>Profesor</option>
+                                <option " . $admin . " value='Administrador'>Administrador</option>
+                            </select>
+                        </div>
+                        //button
+                    </form>
+                </div>";
+            }
+        }
+
+        public static function cargarUsuariosPendientes($conexion){
+            $usuariosPendientes = databaseRep::selectUniversal($conexion, "User_pendiente");//Esto develve una array de Users
+        
+            foreach ($usuariosPendientes as $user) {//Esto es para elegir en que opcion empezara el select
+                
+            //Echo para crear los distintos divs
+            echo "
+            <div class='user-pendiente'>
+                    <div class='user-title'>
+                        <h2>".$user->get_Nombre()."</h2>
+                    </div>
+                    <div class='rol-container'>
+                        <select class='rol'>                                
+                            <option selected value='User'>Usuario</option>
+                            <option value='Profesor'>Profesor</option>
+                            <option value='Administrador'>Administrador</option>
+                        </select>
+                    </div>
+                    <div class='btnsRechazarAceptar'>
+                        <button>Aceptar</button>
+                        <button>Rechazar</button>
+                    </div>
+                </div>";
+            }
+        }
     }
 ?>
