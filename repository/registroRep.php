@@ -1,7 +1,7 @@
 <?php
     class registroRep{
-        public static function userPendiente($conexion,$nombre,$password,$role){
-            $usuario=userRep::crearUsuario(null,$nombre,$password,$role);
+        public static function userPendiente($conexion,$nombre,$password){
+            $usuario=userRep::crearUsuario(null,$nombre,$password,"");
             databaseRep::añadirUsuarioPendiente($conexion,$usuario);
         }
     }
