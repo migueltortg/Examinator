@@ -86,14 +86,14 @@
                     </div>
                     <div class='rol-container'>
                         <select class='rol'>                                
-                            <option selected value='User'>Usuario</option>
-                            <option value='Profesor'>Profesor</option>
-                            <option value='Administrador'>Administrador</option>
+                            <option selected value='USER'>Usuario</option>
+                            <option value='TEACHER'>Profesor</option>
+                            <option value='ADMIN'>Administrador</option>
                         </select>
                     </div>
                     <div class='btnsRechazarAceptar'>
                         <button class='btnAceptar' onclick='aceptar(this)'>Aceptar</button>
-                        <button class='btnRechazar'>Rechazar</button>
+                        <button class='btnRechazar' onclick='rechazar(this)'>Rechazar</button>
                     </div>
                 </div>";
             }

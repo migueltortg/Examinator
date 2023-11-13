@@ -179,7 +179,21 @@
                 return userRep::crearUsuario($registro->IdUser,$registro->Nombre,$registro->Password,$registro->Role);
             } 
         }
+
+        public static function devolverUserPendienteId($conexion,$Id){
+            $resultado = $conexion->query('SELECT * FROM User_pendiente WHERE IdUser='.$Id.';', MYSQLI_USE_RESULT);
+            while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
+                return userRep::crearUsuario("",$registro->Nombre,$registro->Password,"");
+            } 
+        }
         
+        public static function borrarUsuarioPendienteDB($conexion,$id){
+            $preparedConexion=$conexion->prepare('DELETE FROM User_pendiente WHERE IdUser=:id;');
+    
+            $preparedConexion->bindParam(':id',$id);
+            
+            $preparedConexion->execute();
+        }
     }
     
 ?>
