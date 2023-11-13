@@ -20,17 +20,28 @@
 
 <article class="container">
         <div class="title">
-            <h3>Generar</h3>
+            <h3>Generar Examen</h3>
         </div>
         <div class="generar-container">
-            <form action="" method="post">
+            <div>
                 <label for="dificultad">Dificultad</label>
                 <select id="dificultad">
                     <option value="Fácil">Fácil</option>
                     <option value="Medio">Medio</option>
                     <option value="Difícil">Difícil</option>
                 </select>
-                <input type="submit" value="Generar" name="crearExamen" id="inputSubmit">
-            </form>
+            </div>
+            <div>
+                <label for="categoria">Categoria</label>
+                <select id="categoria">
+                    <option value="MECÁNICA">Mecánica</option>
+                    <option value="SEÑALES">Señales</option>
+                    <option value="UsoVia">Uso de la via</option>
+                </select>
+            </div>
+            <div>
+                <button id="generarExamen">Generar</button>
+            </div>
         </div>
 </article>
+<script src="api/generarExamen.js"></script>

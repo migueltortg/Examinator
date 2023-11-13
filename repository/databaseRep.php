@@ -193,6 +193,55 @@
             } 
         }
 
+        public static function asignarPreguntas($conexion,$dificultad,$categoria,$idExamen){
+            $sql = "SELECT * FROM Pregunta WHERE upper(dificultad)=:dificultad AND upper(categoria)=:categoria;";
+            $statement=$conexion->prepare($sql);
+
+            $statement->bindParam(":dificultad",$dificultad);
+            $statement->bindParam(":categoria",$categoria);
+            $statement->execute();
+            while ($registro = $statement->fetch(PDO::FETCH_OBJ)) {
+                $pregunta=preguntaRep::crearPregunta($registro->IdPregunta,$registro->Enunciado,$registro->Respuestas,$registro->Categoria
+                ,$registro->Dificultad,"null");
+                databaseRep::enlazarPreguntaExamen($conexion,$pregunta,$idExamen);//NO AÑADIR ASIGNAR A LA ID EXAMEN DADA
+            } 
+        }
+
+        public static function enlazarPreguntaExamen($conexion,$pregunta,$idExamen){
+            $preparedConexion=$conexion->prepare("INSERT INTO examen_preguntas (IdExamen,IdPregunta)
+            VALUES (:idExamen,:idPregunta)");
+    
+            $idPregunta=$pregunta->get_Id();
+            $preparedConexion->bindParam(':idExamen',$idExamen);
+            $preparedConexion->bindParam(':idPregunta',$idPregunta);
+    
+            $preparedConexion->execute();
+        }
+
+        public static function userAsignaExamen($conexion,$idUser,$idExamen){
+            $preparedConexion=$conexion->prepare("INSERT INTO alumno_examen (IdAlumno,IdExamen)
+            VALUES (:idAlumno,:idExamen)");
+    
+            $preparedConexion->bindParam(':idAlumno',$idUser);
+            $preparedConexion->bindParam(':idExamen',$idExamen);
+    
+            $preparedConexion->execute();
+        }
+
+        public static function examenDevolverUlt($conexion,$examen){
+            $sql = "SELECT * FROM examen WHERE idCreador = :idCreador ORDER BY idExamen DESC LIMIT 1;";
+            $statement=$conexion->prepare($sql);
+
+            $idCreador=$examen->get_IdCreador();
+
+            $statement->bindParam(":idCreador",$idCreador);
+            $statement->execute();
+
+            while ($registro = $statement->fetch(PDO::FETCH_OBJ)) {
+                return examenRep::crearExamen($registro->IdExamen,$registro->fecha_hora,$registro->IdCreador);
+            } 
+        }
+
         public static function devolverUserPendienteId($conexion,$Id){
             $resultado = $conexion->query('SELECT * FROM User_pendiente WHERE IdUser='.$Id.';', MYSQLI_USE_RESULT);
             while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
@@ -207,6 +256,8 @@
             
             $preparedConexion->execute();
         }
+
+        
     }
     
 ?>
