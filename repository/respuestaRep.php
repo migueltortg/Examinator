@@ -1,7 +1,7 @@
 <?php 
     class respuestaRep{
-        public static function crearRespuesta($id,$valor,$enunciado){
-            $respuesta=new Respuesta($id,$valor,$enunciado);
+        public static function crearRespuesta($id,$valor,$enunciado,$correcta){
+            $respuesta=new Respuesta($id,$valor,$enunciado,$correcta);
             return $respuesta;
         }
     

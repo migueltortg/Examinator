@@ -26,7 +26,7 @@
             return $arrayExamen;
         }
 
-        public static function cargarExamenes($conexion){
+        public static function cargarExamenesAsig($conexion){
             $examenes=databaseRep::selectExamenAsignado($conexion,loginRep::pedirValorSession("user")->get_Id());
             foreach ($examenes as $examen) {
                 echo "

@@ -13,7 +13,7 @@
         <div class="exam-container">
             <?php 
                 //CARGAR DIV CON CLASS EXAMEN
-                examenRep::cargarExamenes($conexion->getConexion());
+                examenRep::cargarExamenesAsig($conexion->getConexion());
             ?>
         </div>
 </article>

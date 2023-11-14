@@ -1,7 +1,7 @@
 <header>
     <div id="header-container">
         <div id="icon-container">
-            <img src="css/img/icono.png" alt="" width="40px" height="40px">
+            <a href="?menu=inicio"><img src="css/img/icono.png" alt="" width="40px" height="40px"></a>
         </div>
         <?php
             loginRep::inicioSesion();

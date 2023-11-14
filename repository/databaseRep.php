@@ -211,7 +211,7 @@
         }
 
         public static function devolverExamenId($conexion,$Id){
-            $resultado = $conexion->query('SELECT * FROM Examen WHERE IdUser='.$Id.';', MYSQLI_USE_RESULT);
+            $resultado = $conexion->query('SELECT * FROM Examen WHERE IdExamen='.$Id.';', MYSQLI_USE_RESULT);
             while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
                 return examenRep::crearExamen($registro->IdExamen,$registro->fecha_hora,$registro->IdCreador);
             } 
@@ -234,7 +234,7 @@
                 return userRep::crearUsuario($registro->IdUser,$registro->Nombre,$registro->Password,$registro->Role);
             } 
         }
-
+        
         public static function asignarPreguntas($conexion,$dificultad,$categoria,$idExamen){
             $sql = "SELECT * FROM Pregunta WHERE upper(dificultad)=:dificultad AND upper(categoria)=:categoria;";
             $statement=$conexion->prepare($sql);

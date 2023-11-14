@@ -261,3 +261,61 @@ article{
     align-items: center;
     margin-top: 2%;
 }
+
+.container #crearPregunta #enunciadoPregunta{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.container #crearPregunta #enunciadoPregunta h4{
+    margin-right: 2%;
+    color: white;
+    font-size: 1.3em;
+}
+
+.container #crearPregunta #respuestasPregunta{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.container #crearPregunta #respuestasPregunta div{
+    margin-right: 7%;
+    color: white;
+}
+
+.container #crearPregunta #categoriaPregunta,#dificultadPregunta,#correctaPregunta{
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.container #crearPregunta #dificultadPregunta label{
+    margin-right: 1%;
+    color: white;
+}
+
+.container #crearPregunta #correctaPregunta label{
+    margin-right: 1%;
+    color: white;
+}
+
+.container #crearPregunta #categoriaPregunta label{
+    margin-right: 1%;
+    color: white;
+}
+
+.container #crearPregunta #btn-container{
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+.container #crearPregunta #btn-container button{
+    padding: 1%;
+    border: 1px solid white;
+    background-color: #58AFB8;
+    color: white;
+    border-radius: 5px;
+}

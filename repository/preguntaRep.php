@@ -5,9 +5,8 @@
             $pregunta=new Pregunta($id,$enunciado,$categoria,$dificultad,$recurso);
     
             foreach ($arrayRespuestas as $respuesta) {
-                $pregunta->set_Respuestas(respuestaRep::crearRespuesta($respuesta->IdRespuesta,$respuesta->ValorRespuesta,$respuesta->Enunciado));
+                $pregunta->set_Respuestas(respuestaRep::crearRespuesta($respuesta->IdRespuesta,$respuesta->ValorRespuesta,$respuesta->Enunciado,$respuesta->Correcta));
             }
-    
             return $pregunta;
         }
     
