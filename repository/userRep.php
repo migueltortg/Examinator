@@ -55,22 +55,26 @@
                 }
                 //Echo para crear los distintos divs
                 echo "
-                <div class='user'>
-                    <form action='' method='get'>
-                        <div class='user-title'>
-                            <h2>".$user->get_Nombre()."</h2>
-                        </div>
-                        <div>
-                            <select class='dificultad'>
-                                <option " . $usuario . " value='User'>Usuario</option>
-                                <option " . $teacher . " value='Profesor'>Profesor</option>
-                                <option " . $admin . " value='Administrador'>Administrador</option>
-                            </select>
-                        </div>
-                        //button
-                    </form>
+                <div class='user' id=".$user->get_Id().">
+                    <div class='user-title'>
+                        <h2>".$user->get_Nombre()."</h2>
+                    </div>
+                    <div>
+                        <select class='dificultad'>
+                            <option " . $usuario . " value='User'>Usuario</option>
+                            <option " . $teacher . " value='Profesor'>Profesor</option>
+                            <option " . $admin . " value='Administrador'>Administrador</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button class='modificarRol'>Modificar</button>
+                        <button class='borrarUser'>Borrar</button>
+                    </div>
                 </div>";
             }
+            echo "
+            <script src='api/modificarRol.js'></script>
+            <script src='api/borrarUser.js'></script>";
         }
 
         public static function cargarUsuariosPendientes($conexion){

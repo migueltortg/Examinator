@@ -77,6 +77,22 @@
             $preparedConexion->execute();
         }
 
+        public static function borrarUsuarioID($conexion,$id){
+            $preparedConexion=$conexion->prepare('DELETE FROM USER WHERE IdUser=:id;');
+    
+            $preparedConexion->bindParam(':id',$id);
+            
+            $preparedConexion->execute();
+        }
+
+        public static function borrarAlumnoExamenID($conexion,$id){
+            $preparedConexion=$conexion->prepare('DELETE FROM Alumno_examen WHERE IdAlumno=:id;');
+    
+            $preparedConexion->bindParam(':id',$id);
+            
+            $preparedConexion->execute();
+        }
+
         public static function borrarExamenDB($conexion,$examen){
             $preparedConexion=$conexion->prepare('DELETE FROM EXAMEN WHERE IDEXAMEN=:idExamen AND FECHA_HORA=:fecha_creacion AND IDCREADOR=:idCreador ;');
     
@@ -179,9 +195,16 @@
         }
 
         public static function devolverExamenId($conexion,$Id){
-            $resultado = $conexion->query('SELECT * FROM Examen WHERE IdExamen='.$Id.';', MYSQLI_USE_RESULT);
+            $resultado = $conexion->query('SELECT * FROM Examen WHERE IdUser='.$Id.';', MYSQLI_USE_RESULT);
             while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
                 return examenRep::crearExamen($registro->IdExamen,$registro->fecha_hora,$registro->IdCreador);
+            } 
+        }
+
+        public static function devolverUserId($conexion,$Id){
+            $resultado = $conexion->query('SELECT * FROM User WHERE IdUser='.$Id.';', MYSQLI_USE_RESULT);
+            while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
+                return userRep::crearUsuario($registro->IdUser,$registro->Nombre,$registro->Password, $registro->Role);
             } 
         }
 
