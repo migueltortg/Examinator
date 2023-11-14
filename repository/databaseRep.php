@@ -161,8 +161,8 @@
                 case "User_pendiente":
                     return userRep::arrayUserPendiente($objetos);
                     break;
-                case "Categoria":
-                    return categoriaRep::arrayCategoria($objetos);
+                default:
+                    return $objetos;
                     break;
             }
         }

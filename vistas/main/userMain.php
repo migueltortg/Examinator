@@ -26,19 +26,34 @@
             <div>
                 <label for="dificultad">Dificultad</label>
                 <select id="dificultad">
-                    <!-- HACER SELECT QUE CARGUE TABLA DIFICULTAD -->
-                    <option value="Fácil">Fácil</option>
-                    <option value="Medio">Medio</option>
-                    <option value="Difícil">Difícil</option>
+                    <?php 
+                        //CARGAR SELECT DIFICULTD
+                        $conexion=new DB();
+                        $conexion->conectar();
+
+                        $array=databaseRep::selectUniversal($conexion->getConexion(),"Dificultad");
+                        foreach ($array as $dificultad) { 
+                            // Use actual user data for option value and text
+                            echo "<option value='" . $dificultad->Nombre . "'>" . $dificultad->Nombre . "</option>";
+                        }
+                    ?>
                 </select>
             </div>
             <div>
                 <label for="categoria">Categoria</label>
                 <select id="categoria">
                     <!-- HACER SELECT QUE CARGUE TABLA CATEGORIA -->
-                    <option value="MECÁNICA">Mecánica</option>
-                    <option value="SEÑALES">Señales</option>
-                    <option value="UsoVia">Uso de la via</option>
+                    <?php 
+                        //CARGAR SELECT DIFICULTD
+                        $conexion=new DB();
+                        $conexion->conectar();
+
+                        $array=databaseRep::selectUniversal($conexion->getConexion(),"Categoria");
+                        foreach ($array as $categoria) { 
+                            // Use actual user data for option value and text
+                            echo "<option value='" . $categoria->Nombre . "'>" . $categoria->Nombre . "</option>";
+                        }
+                    ?>
                 </select>
             </div>
             <div>
