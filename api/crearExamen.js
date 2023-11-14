@@ -2,7 +2,7 @@ function generarExamen(boton,ev) {
     //var idUser=2;//ARRAY CON ID DE PREGUNTAS QUE SI METEMOS
     ev.preventDefault();
     var arrayCheckBox=document.getElementsByTagName('input');
-    var idPreguntas=new Array();
+    var idPreguntas=new Array();git
     for(var i=0;i<arrayCheckBox.length;i++){
         if(arrayCheckBox[i].checked){
             idPreguntas.push(arrayCheckBox[i].id);

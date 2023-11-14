@@ -42,5 +42,30 @@
                 ";
             }
         }
+
+        public static function cargarExamen($conexion){
+            $examenes = databaseRep::selectUniversal($conexion, "Examen");
+        
+            foreach ($examenes as $examen) {
+                echo "
+                <div class='examen' id=".$examen->get_Id().">
+                    <div class='examen-title'>
+                        <h2>".$examen->get_Id()."</h2>
+                    </div>
+                    <div class='borrarExamen-container'>
+                        <button class='borrarExamen'>Borrar</button>
+                    </div>
+                    <div>
+                        <h4>Id Creador: ".$examen->get_IdCreador()."</h4>
+                    </div>
+                    <div>
+                        <h4>".$examen->get_FechaCreacion()."</h4>
+                    </div>
+                </div>";
+            }
+            echo "
+            <script src='api/borrarExamen.js'></script>
+            ";
+        }
     }
 ?>

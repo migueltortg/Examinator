@@ -107,6 +107,22 @@
             $preparedConexion->execute();
         }
 
+        public static function borrarPreguntasExamen($conexion,$idExamen){
+            $preparedConexion=$conexion->prepare('DELETE FROM examen_preguntas WHERE IDEXAMEN=:idExamen;');
+    
+            $preparedConexion->bindParam(':idExamen',$idExamen);
+            
+            $preparedConexion->execute();
+        }
+
+        public static function borrarExamenID($conexion,$idExamen){
+            $preparedConexion=$conexion->prepare('DELETE FROM EXAMEN WHERE IDEXAMEN=:idExamen;');
+    
+            $preparedConexion->bindParam(':idExamen',$idExamen);
+            
+            $preparedConexion->execute();
+        }
+
         public static function borrarPreguntaDB($conexion,$pregunta){
             $preparedConexion=$conexion->prepare('DELETE FROM PREGUNTA WHERE IdPregunta=:idPregunta AND Enunciado=:enunciado 
             AND Respuestas=:respuestas AND Categoria=:categoria AND Dificultad=:dificultad AND Tipo_Recurso=:tipo_recurso AND
