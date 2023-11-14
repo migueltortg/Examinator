@@ -244,6 +244,16 @@
             $preparedConexion->execute();
         }
 
+        public static function enlazarPreguntaExamenId($conexion,$idPregunta,$idExamen){
+            $preparedConexion=$conexion->prepare("INSERT INTO examen_preguntas (IdExamen,IdPregunta)
+            VALUES (:idExamen,:idPregunta)");
+    
+            $preparedConexion->bindParam(':idExamen',$idExamen);
+            $preparedConexion->bindParam(':idPregunta',$idPregunta);
+    
+            $preparedConexion->execute();
+        }
+
         public static function userAsignaExamen($conexion,$idUser,$idExamen){
             $preparedConexion=$conexion->prepare("INSERT INTO alumno_examen (IdAlumno,IdExamen)
             VALUES (:idAlumno,:idExamen)");

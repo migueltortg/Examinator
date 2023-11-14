@@ -77,6 +77,33 @@
             <script src='api/borrarUser.js'></script>";
         }
 
+        public static function cargarExamenes($conexion){
+            $examenes = databaseRep::selectUniversal($conexion, "Examen");//Esto develve una array de Users
+        
+            foreach ($usuarios as $user) {//Esto es para elegir en que opcion empezara el select
+                echo "
+                <div class='user' id=".$user->get_Id().">
+                    <div class='user-title'>
+                        <h2>".$user->get_Nombre()."</h2>
+                    </div>
+                    <div>
+                        <select class='dificultad'>
+                            <option " . $usuario . " value='User'>Usuario</option>
+                            <option " . $teacher . " value='Profesor'>Profesor</option>
+                            <option " . $admin . " value='Administrador'>Administrador</option>
+                        </select>
+                    </div>
+                    <div>
+                        <button class='modificarRol'>Modificar</button>
+                        <button class='borrarUser'>Borrar</button>
+                    </div>
+                </div>";
+            }
+            echo "
+            <script src='api/modificarRol.js'></script>
+            <script src='api/borrarUser.js'></script>";
+        }
+
         public static function cargarUsuariosPendientes($conexion){
             $usuariosPendientes = databaseRep::selectUniversal($conexion, "User_pendiente");//Esto develve una array de Users
         

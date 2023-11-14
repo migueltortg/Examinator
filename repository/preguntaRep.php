@@ -28,5 +28,30 @@
             }
             return $arrayPregunta;
         }
+
+        public static function cargarPreguntas($conexion){
+            $preguntas = databaseRep::selectUniversal($conexion, "Pregunta");//Esto develve una array de Users
+        
+            foreach ($preguntas as $pregunta) {//Esto es para elegir en que opcion empezara el select
+                $texto="";
+                foreach($pregunta->get_RespuestasObj() as $respuesta){
+                    $texto=$texto . "<p>".$respuesta->get_valor().". ".$respuesta->get_enunciado()."</p>";
+                }
+
+                echo "
+                <div class='pregunta'>
+                    <div class='pregunta-title'>
+                        <h2>".$pregunta->get_Enunciado()."</h2>
+                    </div>
+                    <div class='respuestas'>
+                        ".$texto."
+                    </div>
+                    <div class='marcarPregunta'>
+                        <h4>Asignar Pregunta</h4>
+                        <input type='checkbox' id=".$pregunta->get_Id().">
+                    </div>
+                </div>";
+            }
+        }
     }
 ?>
