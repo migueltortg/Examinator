@@ -4,20 +4,24 @@
     </div>
     <div class="respuestas-container">
         <div class="respuesta">
-            <input type="checkbox" value="1">
+            <input type="radio" value="1">
             <h4></h4>
         </div>
         <div class="respuesta">
-            <input type="checkbox" value="2">
+            <input type="radio" value="2">
             <h4></h4>
         </div>
         <div class="respuesta">
-            <input type="checkbox" value="3">
+            <input type="radio" value="3">
             <h4></h4>
         </div>
     </div>
+    <div class="dudosa">
+        <input type="checkbox">
+        <h4>Dudosa</h4>
+    </div>
     <div class="respuesta-btns">
-        <button>Anterior</button>
+        <button onclick="retrocederPregunta(this.parentNode.parentNode.id)">Anterior</button>
         <button>Posterior</button>
     </div>
 </div>

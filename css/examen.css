@@ -13,12 +13,13 @@
     color: white;
     margin-right: 2%;
     border: 1px solid white;
-    background-color: #58AFB8;
+    background-color: #4edcec;
 }
 
 #mainPregunta .pregunta-container{
     margin: 1%;
     padding: 1%;
+    margin-top: 8%;
     border-radius: 5px;
     background-color: #269199;
 }
@@ -53,4 +54,13 @@
     padding: 1%;
     margin-right: 2%;
     color: white;
+}
+
+#mainPregunta .pregunta-container .dudosa{
+    display: flex;
+    margin-bottom: 1%;
+}
+
+#mainPregunta .pregunta-container .dudosa input{
+    margin-right: 1%;
 }
