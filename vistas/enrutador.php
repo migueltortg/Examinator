@@ -14,6 +14,6 @@ if (isset($_GET['menu'])) {
     }
     if ($_GET['menu'] == "registro") {
         require_once 'vistas/registro.php';
-    }    
+    } 
 }
 ?>

@@ -1,5 +1,5 @@
 <?php 
-    class Examen {
+    class Examen implements JsonSerializable{
         // Propiedades
         private $id;
         private $fechaCreacion;
@@ -25,7 +25,9 @@
             return $this->idCreador;
         }
 
-        //Funciones
-        
+        public function jsonSerialize(){
+            $vars = get_object_vars($this);
+            return $vars;
+        }
     }
 ?>

@@ -17,6 +17,7 @@
             ?>
         </div>
 </article>
+<script src="api/Examen.js"></script>
 
 <article class="container">
         <div class="title">

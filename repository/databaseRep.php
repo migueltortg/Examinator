@@ -210,10 +210,28 @@
             return $objetos;
         }
 
+        public static function preguntasExamenID($conexion,$idExamen){
+            $resultado = $conexion->query('SELECT * FROM examen_preguntas WHERE IdExamen='.$idExamen.';', MYSQLI_USE_RESULT);
+            $preguntas=array();
+            
+            while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
+                array_push($preguntas,databaseRep::devolverPreguntaId($conexion,$registro->IdPregunta));
+            } 
+
+            return $preguntas;
+        }
+
         public static function devolverExamenId($conexion,$Id){
             $resultado = $conexion->query('SELECT * FROM Examen WHERE IdExamen='.$Id.';', MYSQLI_USE_RESULT);
             while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
                 return examenRep::crearExamen($registro->IdExamen,$registro->fecha_hora,$registro->IdCreador);
+            } 
+        }
+
+        public static function devolverPreguntaId($conexion,$Id){
+            $resultado = $conexion->query('SELECT * FROM Pregunta WHERE IdPregunta='.$Id.';', MYSQLI_USE_RESULT);
+            while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
+                return preguntaRep::crearPregunta($registro->IdPregunta,$registro->Enunciado,$registro->Respuestas,$registro->Categoria,$registro->Dificultad,null);
             } 
         }
 

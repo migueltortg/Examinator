@@ -1,5 +1,5 @@
 <?php 
-    class Pregunta{
+    class Pregunta implements JsonSerializable{
         // Propiedades
         private $id;
         private $enunciado;
@@ -64,6 +64,11 @@
 
         public function eliminarRespuesta($respuesta){
             unset($this->respuestas[$respuesta->get_Id()-1]);
+        }
+
+        public function jsonSerialize(){
+            $vars = get_object_vars($this);
+            return $vars;
         }
     }
 ?>

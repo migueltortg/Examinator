@@ -36,7 +36,7 @@
                         <h4>".$examen->get_FechaCreacion()."</h4>
                     </div>
                     <div class='exam-btns'>
-                        <input type='button' value='Hacerlo' id=".$examen->get_Id().">
+                        <input type='button' value='Hacerlo' id=".$examen->get_Id()." class='hacerExamen'>
                     </div>
                 </div>
                 ";
