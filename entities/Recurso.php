@@ -1,18 +1,12 @@
 <?php 
     class Recurso{
         //Propiedades
-        private $existe;
         private $tipo_recurso;
         private $url;
 
-        public function __construct($existe,$tipo_recurso,$url){
-            $this->existe = $existe;
+        public function __construct($tipo_recurso,$url){
             $this->tipo_recurso = $tipo_recurso;
             $this->url = $url;
-        }
-
-        public function get_Existe(){
-            return $this->existe;
         }
 
         public function get_Tipo_recurso(){
@@ -21,10 +15,6 @@
 
         public function get_Url(){
             return $this->url;
-        }
-
-        public function set_Existe($existe){
-            $this->existe = $existe;
         }
 
         public function set_Tipo_recurso($tipo_recurso){

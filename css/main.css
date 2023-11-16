@@ -306,6 +306,32 @@ article{
     color: white;
 }
 
+.container #crearPregunta #recursoPregunta{
+    margin-top: 2%;
+    color: white;
+}
+
+.container #crearPregunta #recursoPregunta #tipoRecurso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container #crearPregunta #recursoPregunta #recursoInput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.container #crearPregunta #recursoPregunta #tipoRecurso div{
+    display: flex;
+    margin-left: 2%;
+    
+}
+
 .container #crearPregunta #btn-container{
     margin-top: 3%;
     display: flex;

@@ -61,6 +61,22 @@
                 <option value="3">Respuesta 3</option>
             </select>
         </div>
+        <div id="recursoPregunta">
+            <div id="recursoInput">    
+                <input type="file">
+            </div>
+            <div id="tipoRecurso">
+                <h3>Tipo de Archivo:</h3>
+                <div class="opcRecurso">
+                    <input type="radio" value="IMAGEN" name="tipoRecurso">
+                    <h4>Imagen</h4>
+                </div>
+                <div class="opcRecurso">
+                    <input type="radio" value="VIDEO" name="tipoRecurso">
+                    <h4>Video</h4>
+                </div>
+            </div>
+        </div>
         <div id="btn-container">
             <button onclick="crearPregunta(this,event)">Crear Pregunta</button>
         </div>

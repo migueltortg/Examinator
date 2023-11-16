@@ -18,12 +18,12 @@ function crearPregunta(boton,ev) {
     fetch('api/crearPregunta.php', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({"enunciado":enunciado,"respuesta":arrayRespuestas,"categoria":categoria,"dificultad":dificultad,"respuestaCorrecta":respuestaCorrecta})
-      })
-      .then(response => response.text())
-      .then(data => {
+            'Content-Type': 'application/json'
+        },
+    body: JSON.stringify({"enunciado":enunciado,"respuesta":arrayRespuestas,"categoria":categoria,"dificultad":dificultad,"respuestaCorrecta":respuestaCorrecta})
+    })
+    .then(response => response.text())
+    .then(data => {
         console.log(data);
     });
 }
