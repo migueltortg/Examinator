@@ -225,6 +225,17 @@
             return $objetos;
         }
 
+        public static function selectIntentoAsignado($conexion,$IdAlumno){
+            $resultado = $conexion->query('SELECT * FROM Intento WHERE IdUser='.$IdAlumno.';', MYSQLI_USE_RESULT);
+            $objetos=array();
+            
+            while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
+                array_push($objetos,intentoRep::crearIntento($registro->IdIntento, $registro->IdUser,$registro->IdExamen,$registro->fecha_hora,$registro->respuestas));
+            } 
+
+            return $objetos;
+        }
+
         public static function preguntasExamenID($conexion,$idExamen){
             $resultado = $conexion->query('SELECT * FROM examen_preguntas WHERE IdExamen='.$idExamen.';', MYSQLI_USE_RESULT);
             $preguntas=array();

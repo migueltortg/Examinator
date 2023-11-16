@@ -21,6 +21,18 @@
 
 <article class="container">
         <div class="title">
+            <h3>Mis intentos</h3>
+        </div>
+        <div class="intentos-container">
+            <?php 
+                //CARGAR DIV CON CLASS EXAMEN
+                intentoRep::cargarIntentos($conexion->getConexion());
+            ?>
+        </div>
+</article>
+
+<article class="container">
+        <div class="title">
             <h3>Generar Examen</h3>
         </div>
         <div class="generar-container">

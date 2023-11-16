@@ -37,8 +37,7 @@ function enviarExamen(boton){
         })
         .then(response => response.text())
         .then(data => {
-            console.log(data);//Devuelve error
-            //location.reload();//RECARGAMOS PESTAÑA PARA IR A LA PAGINA DE INICIO
+            location.reload();
         }); 
     }else{
         moverAPregunta(errorId);
