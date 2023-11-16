@@ -27,15 +27,26 @@
                         <h4>Fecha: ".$intento->get_Fecha_hora()."</h4>
                     </div>
                     <div>
-                        <h2>Nota: ".intentoRep::calcularNota($intento->get_Respuestas())."</h2>
+                        <h2>Nota: ".intentoRep::calcularNota($conexion,$intento->get_Respuestas())."</h2>
                     </div>
                 </div>
                 ";
             }
         }
 
-        public static function calcularNota($respuestas){
-            return "2";
+        public static function calcularNota($conexion,$respuestas){
+            $arrayRespuestas=json_decode($respuestas);
+            $respuestasCorrectas=databaseRep::respuestasCorrectas($conexion,$arrayRespuestas);
+            $puntos=0;
+            $numRespuestas=0;
+            for($i=0;$i<count($arrayRespuestas);$i++){
+                if($arrayRespuestas[$i]->respuesta==$respuestasCorrectas[$i]){
+                    $puntos=$puntos+1;
+                }
+                $numRespuestas=$numRespuestas+1;
+            }
+
+            return round((($puntos/$numRespuestas)*10),2);
         }
     }
 ?>

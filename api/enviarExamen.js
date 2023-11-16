@@ -18,7 +18,7 @@ function enviarExamen(boton){
             for(var j=1;j<6;j=j+2){
                 if(divRespuestas[i].childNodes[3].childNodes[j].childNodes[1].checked){
                     const respuesta = {
-                        idRespuesta: divRespuestas[i].id,
+                        idPregunta: divRespuestas[i].id,
                         respuesta: divRespuestas[i].childNodes[3].childNodes[j].childNodes[1].value
                       };
                     respuestas.push(respuesta);

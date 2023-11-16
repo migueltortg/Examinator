@@ -225,6 +225,32 @@
             return $objetos;
         }
 
+        public static function respuestasCorrectas($conexion,$respuestas){
+            $arrayCorrecta=array();
+
+            foreach($respuestas as $respuesta){
+                $valorCorrecto=databaseRep::valorCorrecto($conexion,$respuesta->idPregunta);
+                array_push($arrayCorrecta,$valorCorrecto);
+            }
+
+            return $arrayCorrecta;
+        }
+
+        public static function valorCorrecto($conexion,$idPregunta){
+            $resultado = $conexion->query('SELECT * FROM Pregunta WHERE IdPregunta='.$idPregunta.';', MYSQLI_USE_RESULT);
+            $respuestaCorrecta="";
+            while ($registro = $resultado->fetch(PDO::FETCH_OBJ)) {
+                $pregunta=preguntaRep::crearPregunta($registro->IdPregunta,$registro->Enunciado,$registro->Respuestas,$registro->Categoria,$registro->Dificultad,null);
+                foreach($pregunta->get_RespuestasObj() as $respuesta){
+                    if($respuesta->get_correcta()=="true"){
+                        $respuestaCorrecta=$respuesta->get_Id();
+                    }
+                }
+            } 
+
+            return $respuestaCorrecta;
+        }
+        
         public static function selectIntentoAsignado($conexion,$IdAlumno){
             $resultado = $conexion->query('SELECT * FROM Intento WHERE IdUser='.$IdAlumno.';', MYSQLI_USE_RESULT);
             $objetos=array();

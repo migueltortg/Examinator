@@ -334,7 +334,7 @@ article{
     margin-bottom: 3%;
     padding: 3%;
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 70% 30%;
     grid-row: auto auto;
     background-color: #58AFB8;
     border-radius: 5px;
