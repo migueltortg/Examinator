@@ -24,6 +24,6 @@ function crearPregunta(boton,ev) {
     })
     .then(response => response.text())
     .then(data => {
-        console.log(data);
+        location.reload();
     });
 }
