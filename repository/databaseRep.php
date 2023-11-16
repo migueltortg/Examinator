@@ -60,7 +60,22 @@
     
             $preparedConexion->execute();
         }
+        
+        public static function añadirIntento($conexion,$intento){
+            $preparedConexion=$conexion->prepare("INSERT INTO INTENTO(IdUser,IdExamen,respuestas) VALUES (:idUser,:idExamen,:respuestas);");
     
+            $idUser=$intento->get_Usuario();
+            $idExamen=$intento->get_Examen();
+            $respuestas=$intento->get_Respuestas();
+
+    
+            $preparedConexion->bindParam(':idUser',$idUser);
+            $preparedConexion->bindParam(':idExamen',$idExamen);
+            $preparedConexion->bindParam(':respuestas',$respuestas);
+    
+            $preparedConexion->execute();
+        }
+
         public static function borrarUsuarioDB($conexion,$usuario){
             $preparedConexion=$conexion->prepare('DELETE FROM USER WHERE IdUser=:id AND Nombre=:nombre AND Password=:password AND Role=:role ;');
     

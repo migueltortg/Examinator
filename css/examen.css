@@ -16,7 +16,7 @@
     background-color: #4edcec;
 }
 
-#mainPregunta .pregunta-container{
+.mainPregunta .pregunta-container{
     margin: 1%;
     padding: 1%;
     margin-top: 8%;
@@ -24,29 +24,29 @@
     background-color: #269199;
 }
 
-#mainPregunta .pregunta-container .enunciado-container{
+.mainPregunta .pregunta-container .enunciado-container{
     border-bottom: 1px solid white;
     margin-bottom: 1%;
 }
 
-#mainPregunta .pregunta-container .respuestas-container div{
+.mainPregunta .pregunta-container .respuestas-container div{
     display: flex;
     margin-bottom: 2%;
     margin-top: 2%;
 }
 
-#mainPregunta .pregunta-container .respuestas-container div input{
+.mainPregunta .pregunta-container .respuestas-container div input{
     margin-right: 1%;
 }
 
-#mainPregunta .pregunta-container .respuesta-btns{
+.mainPregunta .pregunta-container .respuesta-btns{
     display: flex;
     justify-content: center;
     align-items: center;
     border-top: 1px solid white;
 }
 
-#mainPregunta .pregunta-container .respuesta-btns button{
+.mainPregunta .pregunta-container .respuesta-btns button{
     margin-top: 1%;
     background-color: #58AFB8;
     border: 1px solid white;
@@ -56,11 +56,11 @@
     color: white;
 }
 
-#mainPregunta .pregunta-container .dudosa{
+.mainPregunta .pregunta-container .dudosa{
     display: flex;
     margin-bottom: 1%;
 }
 
-#mainPregunta .pregunta-container .dudosa input{
+.mainPregunta .pregunta-container .dudosa input{
     margin-right: 1%;
 }

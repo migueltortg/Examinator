@@ -37,7 +37,8 @@ function hacerExamen(ev) {
                 var main = document.getElementsByTagName("main");
                 document.body.removeChild(main[0]);
                 main=document.createElement("main");
-                main.id="mainPregunta";
+                main.setAttribute("class", "mainPregunta");
+                main.id=idExamen;
                 document.body.appendChild(main);
 
                 for(var i=0;i<y.length;i++){
@@ -45,7 +46,7 @@ function hacerExamen(ev) {
                     generarPregunta(plantilla,y[i]);
                     plantilla.childNodes[7].childNodes[3].setAttribute("onclick", "pasarPregunta(this.parentNode.parentNode.id)");
                     if(y.length-1==i){
-                        plantilla.childNodes[7].childNodes[3].setAttribute("onclick", "enviarExamen()");
+                        plantilla.childNodes[7].childNodes[3].setAttribute("onclick", "enviarExamen(this)");
                         plantilla.childNodes[7].childNodes[3].innerHTML="Enviar";
                     }
                     main.appendChild(plantilla);
@@ -59,6 +60,7 @@ function hacerExamen(ev) {
             });
         })
 }
+
 function generarHeader(pregunta,i){
     var btn = document.createElement("button");
     btn.innerHTML=i;
@@ -67,7 +69,7 @@ function generarHeader(pregunta,i){
 }
 
 function generarPregunta(plantilla,pregunta){
-    plantilla.id=pregunta.id;
+    plantilla.setAttribute("id", pregunta.id);
 
     plantilla.childNodes[1].childNodes[1].innerHTML=pregunta.enunciado;
     
